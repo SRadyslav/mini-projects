@@ -1,5 +1,6 @@
 import React from 'react';
 import './index.scss';
+import s from './index.scss';
 import { Success } from './Success';
 import { UsersBlock } from './UsersBlock';
 
@@ -22,7 +23,7 @@ function Users() {
             SetLoading(false)
         )
     }, [])
-
+    
     const onChangeSearchValue = (text) => {
         setSearch(text)
     }
@@ -40,7 +41,7 @@ function Users() {
     }
 
     return (
-        <div className="App">
+        <div className="AppUsers">
             {!success
                 ? <UsersBlock isLoading={isLoading} items={users} search={search} onSearch={onChangeSearchValue}
                     onClickInvite={onClickInvite} invites={invites} setSuccess={setSuccess} />

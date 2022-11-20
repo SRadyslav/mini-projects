@@ -1,7 +1,7 @@
 import React from 'react'
 import './app.scss'
 import preloader from './assets/preloader.svg'
-import { Route, Routes, redirect } from 'react-router-dom'
+import { Route, Routes, Navigate, Link, useLocation } from 'react-router-dom'
 
 
 const Counter = React.lazy(() => import(/* webpackChunkName: "Counter"*/ './Counter'));
@@ -9,6 +9,8 @@ const Gallery = React.lazy(() => import(/* webpackChunkName: "Gallery"*/ './Gall
 const Modal = React.lazy(() => import(/* webpackChunkName: "Modal"*/ './Modal'));
 const Quiz = React.lazy(() => import(/* webpackChunkName: "Quiz"*/ './Quiz'));
 const Users = React.lazy(() => import(/* webpackChunkName: "Users"*/ './Users'));
+
+
 
 const projects = ['Counter', 'Modal', 'Quiz', 'Users', 'Gallery']
 
@@ -18,11 +20,11 @@ const AppContent = () => {
     <div className='navbar'>
       <div className='container'>
         {
-          projects.map(proj => <a
+          projects.map(proj => <Link
             className='button_a'
             key={proj}
-            href={proj}
-          >{proj}</a>)
+            to={proj}
+          >{proj}</Link>)
         }
       </div>
     </div>
@@ -30,6 +32,15 @@ const AppContent = () => {
 }
 
 function App() {
+  const {pathname} = useLocation()
+
+  React.useEffect(() => {
+    document.body.classList.add(`body${pathname.slice(1)}`);
+    return () => {
+        document.body.classList.remove(`body${pathname.slice(1)}`);
+    };
+
+}, [pathname])
   return (
     <>
       <AppContent />
@@ -41,7 +52,7 @@ function App() {
           <Route path='/Modal' element={<Modal />}></Route>
           <Route path='/Quiz' element={<Quiz />}></Route>
           <Route path='/Users' element={<Users />}></Route>
-          <Route path='*' action={redirect('/')}></Route>
+          <Route path='*' element={<Navigate to='/' />}></Route>
         </Routes>
       </React.Suspense>
     </>

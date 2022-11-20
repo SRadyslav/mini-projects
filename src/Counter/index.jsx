@@ -3,8 +3,9 @@ import './index.scss';
 
 function Counter() {
     const [count, setCount] = React.useState(0)
+
     return (
-        <div className="App">
+        <div className="AppCounter">
             <div>
                 <h2>Счетчик:</h2>
                 <h1>{count}</h1>

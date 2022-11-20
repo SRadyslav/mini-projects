@@ -2,7 +2,7 @@
 Some mini-projects to coding practice
 
 ## GitHub-Pages
-Repository is deployed on [GitHubPages](https://sradyslav.github.io/)
+Repository is deployed on [GitHubPages](https://sradyslav.github.io/mini-projects/)
 
 ## Getting Started with Create React App
 

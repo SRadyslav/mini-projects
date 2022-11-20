@@ -70,10 +70,12 @@ function Quiz() {
     }
 
     return (
-        <div className="App">
-            {steps !== step
-                ? <Game question={question} onClickVariant={onClickVariant} steps={steps} step={step} />
-                : <Result tryAgain={tryAgain} correct={correct} steps={steps} />}
+        <div className='containerQuiz'>
+            <div className="AppQuiz">
+                {steps !== step
+                    ? <Game question={question} onClickVariant={onClickVariant} steps={steps} step={step} />
+                    : <Result tryAgain={tryAgain} correct={correct} steps={steps} />}
+            </div>
         </div>
     );
 }

@@ -3,14 +3,14 @@
       'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
   }
   
-  body {
+  .bodyModal {
     margin: 0;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     background-color: #e6e8ec;
   }
   
-  .App {
+  .AppModal {
     display: flex;
     align-items: center;
     justify-content: center;

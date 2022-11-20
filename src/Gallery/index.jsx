@@ -25,7 +25,6 @@ function Gallery() {
         fetch(`https://634bdb48317dc96a308c1d66.mockapi.io/photoGallery?page=${page + 1}&limit=3&${category}`).then(res => res.json())
             .then(json => {
                 setCollection(json)
-                console.log(json)
             }).catch(error => {
                 console.warn(error)
                 alert('Не удалось получить фото')
@@ -35,8 +34,9 @@ function Gallery() {
             })
     }, [categoryId, page])
 
+
     return (
-        <div className="App">
+        <div className="AppGallery">
             <h1>Моя коллекция фотографий</h1>
             <div className="top">
                 <ul className="tags">

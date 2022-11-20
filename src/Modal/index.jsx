@@ -17,8 +17,9 @@ const ModalBlock = ({ open, setOpen, children }) => {
 
 function Modal() {
     const [open, setOpen] = React.useState(false)
+
     return (
-        <div className="App">
+        <div className="AppModal">
             <button className="open-modal-btn" onClick={() => setOpen(true)}>✨ Открыть окно</button>
             <ModalBlock open={open} setOpen={setOpen}>
                 <img src="https://media2.giphy.com/media/xT0xeJpnrWC4XWblEk/giphy.gif" />

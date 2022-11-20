@@ -1,13 +1,17 @@
+body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
 .navbar {
     margin: 0;
     padding: 0;
-    overflow: hidden;
+    min-width: fit-content;
 }
 
 .container {
-display: flex;
-justify-content: center;
-
+    display: block;
+    text-align: center;
 }
 
 .h1_app{
